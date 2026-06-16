@@ -48,9 +48,9 @@ export default function VisionMissionSection() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section className="relative bg-[#080808] py-24 lg:py-32 overflow-hidden">
+    <section className="relative bg-white py-24 lg:py-32 overflow-hidden">
       {/* Red glow top center */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-[#E31E24]/6 blur-3xl pointer-events-none rounded-full" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-[#E31E24]/8 blur-3xl pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
@@ -62,7 +62,7 @@ export default function VisionMissionSection() {
           </div>
           <AnimatedHeading
             text="Vision, Mission & Values"
-            className="text-3xl sm:text-4xl lg:text-5xl text-white"
+            className="text-3xl sm:text-4xl lg:text-5xl text-gray-900"
           />
         </div>
 
@@ -73,7 +73,7 @@ export default function VisionMissionSection() {
             initial={{ opacity: 0, y: 40 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="relative group bg-[#131313] border border-white/5 rounded-2xl p-8 overflow-hidden card-shine hover:border-[#E31E24]/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(227,30,36,0.1)]"
+            className="relative group bg-white border border-black/[0.06] shadow-soft rounded-2xl p-8 overflow-hidden card-shine hover:border-[#E31E24]/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(227,30,36,0.12)]"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#E31E24]/5 blur-2xl rounded-full" />
             <div className="relative z-10">
@@ -81,10 +81,10 @@ export default function VisionMissionSection() {
                 <Eye size={22} className="text-[#E31E24]" />
               </div>
               <p className="text-xs font-bold tracking-[0.3em] text-[#E31E24] uppercase mb-3">Our Vision</p>
-              <h3 className="font-heading text-xl font-bold text-white mb-4">
+              <h3 className="font-heading text-xl font-bold text-gray-900 mb-4">
                 Globally Recognized Excellence
               </h3>
-              <p className="text-white/60 leading-relaxed text-sm">
+              <p className="text-gray-600 leading-relaxed text-sm">
                 To become a globally recognized organization delivering reliable sourcing
                 and supply solutions while creating lasting value for customers, partners,
                 and communities worldwide.
@@ -134,13 +134,13 @@ export default function VisionMissionSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.3 + i * 0.07 }}
-              className="group bg-[#131313] border border-white/5 rounded-xl p-4 text-center hover:border-[#E31E24]/40 hover:bg-[#1a1a1a] transition-all duration-300 hover:-translate-y-1 cursor-default"
+              className="group bg-white border border-black/[0.06] shadow-soft rounded-xl p-4 text-center hover:border-[#E31E24]/40 hover:bg-[#FAF9F7] transition-all duration-300 hover:-translate-y-1 cursor-default"
             >
               <div className="w-8 h-8 rounded-lg bg-[#E31E24]/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-[#E31E24]/20 transition-colors">
                 <div className="w-2 h-2 rounded-full bg-[#E31E24]" />
               </div>
-              <p className="font-heading text-sm font-bold text-white mb-1">{val.title}</p>
-              <p className="text-[11px] text-white/45 leading-relaxed">{val.desc}</p>
+              <p className="font-heading text-sm font-bold text-gray-900 mb-1">{val.title}</p>
+              <p className="text-[11px] text-gray-500 leading-relaxed">{val.desc}</p>
             </motion.div>
           ))}
         </div>

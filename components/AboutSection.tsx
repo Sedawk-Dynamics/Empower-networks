@@ -41,10 +41,10 @@ export default function AboutSection() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="about" className="relative bg-[#0F0F0F] py-24 lg:py-32 overflow-hidden">
+    <section id="about" className="relative bg-[#FAF9F7] py-24 lg:py-32 overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#E31E24]/3 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-[#E31E24]/5 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#E31E24]/5 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-[#C9A84C]/10 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -56,14 +56,14 @@ export default function AboutSection() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-soft ring-1 ring-black/5">
               <Image
                 src="/images/about-global.png"
                 alt="Empower Networks global trade network"
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F]/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
             </div>
             {/* Floating stat card */}
             <motion.div
@@ -85,13 +85,13 @@ export default function AboutSection() {
             <SectionLabel>About Us</SectionLabel>
             <AnimatedHeading
               text="Your Trusted Global Trade Partner"
-              className="text-3xl sm:text-4xl lg:text-5xl text-white mb-6"
+              className="text-3xl sm:text-4xl lg:text-5xl text-gray-900 mb-6"
             />
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-white/60 leading-relaxed mb-4 text-base"
+              className="text-gray-600 leading-relaxed mb-4 text-base"
             >
               Empower Networks Private Limited is a global import and export company
               specializing in agricultural products, industrial chemicals, and scrap
@@ -103,7 +103,7 @@ export default function AboutSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-white/60 leading-relaxed mb-8 text-base"
+              className="text-gray-600 leading-relaxed mb-8 text-base"
             >
               Driven by reliability, professionalism, and customer satisfaction, we provide
               efficient sourcing, procurement, and supply solutions tailored to the evolving
@@ -129,7 +129,7 @@ export default function AboutSection() {
                 <div className="w-5 h-5 rounded-full bg-[#E31E24]/15 border border-[#E31E24]/40 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#E31E24]" />
                 </div>
-                <p className="text-white/75 text-sm leading-relaxed">{point}</p>
+                <p className="text-gray-700 text-sm leading-relaxed">{point}</p>
               </motion.div>
             ))}
           </div>

@@ -71,10 +71,10 @@ export default function WhyChooseUs() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section id="why-us" className="relative bg-[#141414] py-24 lg:py-32 overflow-hidden">
+    <section id="why-us" className="relative bg-[#FAF9F7] py-24 lg:py-32 overflow-hidden">
       {/* Background accents */}
-      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#E31E24]/4 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-[#E31E24]/3 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#E31E24]/6 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-[#C9A84C]/10 blur-[100px] rounded-full pointer-events-none" />
 
       {/* Horizontal rule top */}
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#E31E24]/30 to-transparent" />
@@ -89,13 +89,13 @@ export default function WhyChooseUs() {
           </div>
           <AnimatedHeading
             text="Why Choose Empower Networks?"
-            className="text-3xl sm:text-4xl lg:text-5xl text-white mb-4"
+            className="text-3xl sm:text-4xl lg:text-5xl text-gray-900 mb-4"
           />
           <motion.p
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 0.4 }}
-            className="text-white/50 max-w-2xl mx-auto text-base"
+            className="text-gray-500 max-w-2xl mx-auto text-base"
           >
             We combine global reach with local expertise to deliver unmatched value
             in every trade relationship.
@@ -112,10 +112,10 @@ export default function WhyChooseUs() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative bg-[#0F0F0F] border border-white/5 rounded-2xl p-7 overflow-hidden hover:border-[#E31E24]/40 hover:bg-[#131313] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(227,30,36,0.12)] card-shine cursor-default"
+                className="group relative bg-white border border-black/[0.06] shadow-soft rounded-2xl p-7 overflow-hidden hover:border-[#E31E24]/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(227,30,36,0.15)] card-shine cursor-default"
               >
                 {/* Number */}
-                <span className="absolute top-5 right-6 text-4xl font-black font-heading text-white/4 group-hover:text-[#E31E24]/10 transition-colors duration-500">
+                <span className="absolute top-5 right-6 text-4xl font-black font-heading text-black/[0.04] group-hover:text-[#E31E24]/10 transition-colors duration-500">
                   {reason.number}
                 </span>
 
@@ -124,10 +124,10 @@ export default function WhyChooseUs() {
                   <Icon size={22} className="text-[#E31E24]" />
                 </div>
 
-                <h3 className="font-heading text-lg font-bold text-white mb-3 group-hover:text-[#F0EDE8] transition-colors">
+                <h3 className="font-heading text-lg font-bold text-gray-900 mb-3 transition-colors">
                   {reason.title}
                 </h3>
-                <p className="text-white/55 text-sm leading-relaxed group-hover:text-white/70 transition-colors">
+                <p className="text-gray-500 text-sm leading-relaxed group-hover:text-gray-700 transition-colors">
                   {reason.desc}
                 </p>
 

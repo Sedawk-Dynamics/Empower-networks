@@ -39,34 +39,34 @@
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
   /* Core brand colors from logo */
   --brand-red: #E31E24;
   --brand-gold: #C9A84C;
 
-  /* Dark premium backgrounds alternating */
-  --background: #080808;
-  --surface-1: #0F0F0F;
-  --surface-2: #141414;
-  --surface-3: #1A1A1A;
+  /* Light premium backgrounds (alternating warm neutrals) */
+  --background: #FFFFFF;
+  --surface-1: #FAF9F7;
+  --surface-2: #F4F2EE;
+  --surface-3: #ECE9E3;
 
-  --foreground: #F0EDE8;
-  --card: #131313;
-  --card-foreground: #F0EDE8;
-  --popover: #131313;
-  --popover-foreground: #F0EDE8;
+  --foreground: #14110F;
+  --card: #FFFFFF;
+  --card-foreground: #14110F;
+  --popover: #FFFFFF;
+  --popover-foreground: #14110F;
 
   --primary: #E31E24;
-  --primary-foreground: #F8F8F8;
-  --secondary: #1A1A1A;
-  --secondary-foreground: #F0EDE8;
-  --muted: #1E1E1E;
-  --muted-foreground: #8A8480;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F4F2EE;
+  --secondary-foreground: #14110F;
+  --muted: #F4F2EE;
+  --muted-foreground: #6B6560;
   --accent: #C9A84C;
-  --accent-foreground: #080808;
+  --accent-foreground: #14110F;
   --destructive: #E31E24;
-  --border: rgba(255, 255, 255, 0.08);
-  --input: rgba(255, 255, 255, 0.06);
+  --border: rgba(20, 17, 15, 0.08);
+  --input: rgba(20, 17, 15, 0.10);
   --ring: #E31E24;
   --radius: 0.625rem;
 }
@@ -93,7 +93,7 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #080808;
+  background: #ECE9E3;
 }
 ::-webkit-scrollbar-thumb {
   background: #E31E24;
@@ -142,6 +142,34 @@
 .card-shine:hover::before {
   top: 0;
   left: 0;
+}
+
+/* Soft premium shadow for light cards */
+.shadow-soft {
+  box-shadow: 0 1px 2px rgba(20, 17, 15, 0.04), 0 12px 32px -12px rgba(20, 17, 15, 0.12);
+}
+.shadow-soft-hover:hover {
+  box-shadow: 0 1px 2px rgba(20, 17, 15, 0.04), 0 28px 60px -20px rgba(227, 30, 36, 0.22);
+}
+
+/* Subtle dotted grid texture for light sections */
+.bg-grid-light {
+  background-image: radial-gradient(rgba(20, 17, 15, 0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Animated gradient text */
+.text-gradient-brand {
+  background-image: linear-gradient(110deg, #E31E24 20%, #FF8A3D 50%, #E31E24 80%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer-text 6s linear infinite;
+}
+@keyframes shimmer-text {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
 /* Noise texture overlay */

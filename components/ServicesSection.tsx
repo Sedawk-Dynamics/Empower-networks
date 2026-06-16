@@ -65,8 +65,8 @@ export default function ServicesSection() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section id="services" className="relative bg-[#080808] py-24 lg:py-32 overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#E31E24]/3 blur-[120px] rounded-full pointer-events-none" />
+    <section id="services" className="relative bg-white py-24 lg:py-32 overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#E31E24]/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -78,10 +78,10 @@ export default function ServicesSection() {
             </div>
             <AnimatedHeading
               text="Our Core Services"
-              className="text-3xl sm:text-4xl lg:text-5xl text-white"
+              className="text-3xl sm:text-4xl lg:text-5xl text-gray-900"
             />
           </div>
-          <p className="text-white/50 max-w-sm text-sm leading-relaxed lg:text-right">
+          <p className="text-gray-500 max-w-sm text-sm leading-relaxed lg:text-right">
             End-to-end trade solutions from sourcing to delivery, designed to power your global business.
           </p>
         </div>
@@ -99,7 +99,7 @@ export default function ServicesSection() {
                 className={`group flex flex-col sm:flex-row items-start sm:items-center gap-5 p-6 rounded-2xl border transition-all duration-400 cursor-default
                   ${service.highlight
                     ? 'bg-[#E31E24] border-transparent hover:shadow-[0_20px_60px_rgba(227,30,36,0.25)]'
-                    : 'bg-[#0F0F0F] border-white/5 hover:border-[#E31E24]/30 hover:bg-[#131313] hover:shadow-[0_10px_40px_rgba(227,30,36,0.08)]'
+                    : 'bg-white border-black/[0.06] shadow-soft hover:border-[#E31E24]/30 hover:bg-[#FAF9F7] hover:shadow-[0_18px_50px_rgba(227,30,36,0.12)]'
                   } hover:-translate-y-0.5`}
               >
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0
@@ -111,17 +111,17 @@ export default function ServicesSection() {
                   <Icon size={22} className={service.highlight ? 'text-white' : 'text-[#E31E24]'} />
                 </div>
                 <div className="flex-1">
-                  <h3 className={`font-heading text-base sm:text-lg font-bold mb-1 ${service.highlight ? 'text-white' : 'text-white'}`}>
+                  <h3 className={`font-heading text-base sm:text-lg font-bold mb-1 ${service.highlight ? 'text-white' : 'text-gray-900'}`}>
                     {service.title}
                   </h3>
-                  <p className={`text-sm leading-relaxed ${service.highlight ? 'text-white/80' : 'text-white/50 group-hover:text-white/65'} transition-colors`}>
+                  <p className={`text-sm leading-relaxed ${service.highlight ? 'text-white/80' : 'text-gray-500 group-hover:text-gray-700'} transition-colors`}>
                     {service.desc}
                   </p>
                 </div>
                 <div className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0
-                  ${service.highlight ? 'bg-white/15' : 'bg-white/5 group-hover:bg-[#E31E24]/20'} transition-all group-hover:scale-110`}
+                  ${service.highlight ? 'bg-white/15' : 'bg-black/[0.04] group-hover:bg-[#E31E24]/15'} transition-all group-hover:scale-110`}
                 >
-                  <ArrowUpRight size={16} className={service.highlight ? 'text-white' : 'text-white/40 group-hover:text-[#E31E24]'} />
+                  <ArrowUpRight size={16} className={service.highlight ? 'text-white' : 'text-gray-400 group-hover:text-[#E31E24]'} />
                 </div>
               </motion.div>
             )

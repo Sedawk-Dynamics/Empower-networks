@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { Phone, Mail, MapPin, Globe } from 'lucide-react'
+import SocialLinks from '@/components/SocialLinks'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -54,7 +55,7 @@ export default function Footer() {
             <p className="text-white/45 text-sm leading-relaxed mb-5">
               Global Import & Export solutions. Connecting businesses worldwide through reliable sourcing of agricultural, chemical, and scrap products.
             </p>
-            <div className="flex items-center gap-2 text-white/50 text-xs">
+            <div className="flex items-center gap-2 text-white/50 text-xs mb-6">
               <Globe size={12} className="text-[#E31E24]" />
               <a
                 href="https://empowernetworks.co.in"
@@ -65,6 +66,9 @@ export default function Footer() {
                 empowernetworks.co.in
               </a>
             </div>
+
+            {/* Follow Us */}
+            <SocialLinks variant="dark" size={18} showLabel />
           </div>
 
           {/* Quick Links */}

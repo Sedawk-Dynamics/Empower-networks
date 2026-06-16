@@ -53,7 +53,7 @@ export default function TeamSection() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section id="team" className="relative bg-[#141414] py-24 lg:py-32 overflow-hidden">
+    <section id="team" className="relative bg-white py-24 lg:py-32 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#E31E24]/20 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,7 +66,7 @@ export default function TeamSection() {
           </div>
           <AnimatedHeading
             text="Meet Our Team"
-            className="text-3xl sm:text-4xl lg:text-5xl text-white"
+            className="text-3xl sm:text-4xl lg:text-5xl text-gray-900"
           />
         </div>
 
@@ -77,7 +77,7 @@ export default function TeamSection() {
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative bg-[#0F0F0F] border border-white/5 rounded-2xl p-7 text-center overflow-hidden hover:border-[#E31E24]/30 hover:bg-[#131313] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(227,30,36,0.1)] card-shine cursor-default"
+              className="group relative bg-white border border-black/[0.06] shadow-soft rounded-2xl p-7 text-center overflow-hidden hover:border-[#E31E24]/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(227,30,36,0.14)] card-shine cursor-default"
             >
               {/* Glow effect */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-16 bg-[#E31E24]/5 blur-2xl group-hover:bg-[#E31E24]/10 transition-colors duration-500 pointer-events-none" />
@@ -91,14 +91,14 @@ export default function TeamSection() {
                 </div>
               </div>
 
-              <h3 className="font-heading text-base font-bold text-white mb-1">{member.name}</h3>
+              <h3 className="font-heading text-base font-bold text-gray-900 mb-1">{member.name}</h3>
 
               <div className="flex items-center justify-center gap-1.5 mb-3">
                 <Briefcase size={11} className="text-[#E31E24]" />
                 <span className="text-xs text-[#E31E24] font-semibold tracking-wider">{member.designation}</span>
               </div>
 
-              <p className="text-white/50 text-sm leading-relaxed group-hover:text-white/65 transition-colors">
+              <p className="text-gray-500 text-sm leading-relaxed group-hover:text-gray-700 transition-colors">
                 {member.role}
               </p>
 
