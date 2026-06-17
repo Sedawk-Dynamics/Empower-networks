@@ -45,11 +45,11 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Hqp6xFcxTpCvlOpKrEHiKsDTbjOdFB.png"
+                src="/Empower Logo white red Horizontal png.png"
                 alt="Empower Networks Logo"
-                width={72}
-                height={72}
-                className="object-contain"
+                width={220}
+                height={70}
+                className="h-16 w-auto object-contain"
               />
             </div>
             <p className="text-white/45 text-sm leading-relaxed mb-5">
