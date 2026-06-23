@@ -153,92 +153,110 @@ export default function ContactSection() {
           </div>
 
           {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="bg-white border border-black/[0.06] shadow-soft rounded-2xl p-7 sm:p-8"
-          >
-            <div className="flex items-center gap-2 mb-6">
-              <Send size={18} className="text-[#E31E24]" />
-              <h3 className="font-heading text-lg font-bold text-gray-900">Send an Enquiry</h3>
-            </div>
+         <motion.div
+  initial={{ opacity: 0, x: 30 }}
+  animate={inView ? { opacity: 1, x: 0 } : {}}
+  transition={{ duration: 0.7, delay: 0.2 }}
+  className="bg-white border border-black/10 rounded-2xl shadow-soft p-8"
+>
+  <div className="flex items-center gap-2 mb-6">
+    <Send size={18} className="text-[#E31E24]" />
+    <h3 className="text-xl font-bold text-gray-900">
+      Send an Enquiry
+    </h3>
+  </div>
 
-            {submitted ? (
-              <div className="flex items-center justify-center h-48">
-                <div className="text-center">
-                  <div className="w-14 h-14 rounded-full bg-[#E31E24]/10 border border-[#E31E24]/30 flex items-center justify-center mx-auto mb-3">
-                    <Send size={22} className="text-[#E31E24]" />
-                  </div>
-                  <p className="text-gray-900 font-semibold">Message Sent!</p>
-                  <p className="text-gray-500 text-sm mt-1">We&apos;ll get back to you soon.</p>
-                </div>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-xs text-gray-500 font-semibold tracking-wider uppercase block mb-1.5">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      placeholder="Your name"
-                      className="w-full bg-[#FAF9F7] border border-black/10 rounded-xl px-4 py-3 text-gray-800 placeholder-gray-400 text-sm focus:outline-none focus:border-[#E31E24]/50 focus:bg-white transition-all"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-xs text-gray-500 font-semibold tracking-wider uppercase block mb-1.5">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      value={form.phone}
-                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      placeholder="+91 XXXXX XXXXX"
-                      className="w-full bg-[#FAF9F7] border border-black/10 rounded-xl px-4 py-3 text-gray-800 placeholder-gray-400 text-sm focus:outline-none focus:border-[#E31E24]/50 focus:bg-white transition-all"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="text-xs text-white/40 font-semibold tracking-wider uppercase block mb-1.5">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    placeholder="your@email.com"
-                    className="w-full bg-[#FAF9F7] border border-black/10 rounded-xl px-4 py-3 text-gray-800 placeholder-gray-400 text-sm focus:outline-none focus:border-[#E31E24]/50 focus:bg-white transition-all"
-                  />
-                </div>
-                <div>
-                  <label className="text-xs text-white/40 font-semibold tracking-wider uppercase block mb-1.5">
-                    Message *
-                  </label>
-                  <textarea
-                    required
-                    rows={5}
-                    value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    placeholder="Tell us about your requirements..."
-                    className="w-full bg-[#FAF9F7] border border-black/10 rounded-xl px-4 py-3 text-gray-800 placeholder-gray-400 text-sm focus:outline-none focus:border-[#E31E24]/50 focus:bg-white transition-all resize-none"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full flex items-center justify-center gap-2 bg-[#E31E24] hover:bg-[#c01a1f] text-white font-bold py-3.5 px-6 rounded-xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(227,30,36,0.4)] hover:scale-[1.02] text-sm tracking-wider"
-                >
-                  <Send size={16} />
-                  Send Enquiry
-                </button>
-              </form>
-            )}
-          </motion.div>
+  <form
+    action="https://api.web3forms.com/submit"
+    method="POST"
+    className="space-y-5"
+  >
+    <input
+      type="hidden"
+      name="access_key"
+      value="03591616-34ea-4afb-acd4-05d2cb158cd4"
+    />
+
+    <div>
+      <label className="block text-sm font-semibold text-gray-700 mb-2">
+        Full Name
+      </label>
+
+      <input
+        type="text"
+        name="name"
+        required
+        placeholder="Enter your full name"
+        className="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 outline-none focus:border-[#E31E24] focus:bg-white"
+      />
+    </div>
+
+    <div>
+      <label className="block text-sm font-semibold text-gray-700 mb-2">
+        Email
+      </label>
+
+      <input
+        type="email"
+        name="email"
+        required
+        placeholder="you@example.com"
+        className="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 outline-none focus:border-[#E31E24] focus:bg-white"
+      />
+    </div>
+
+    <div>
+      <label className="block text-sm font-semibold text-gray-700 mb-2">
+        Phone
+      </label>
+
+      <input
+        type="tel"
+        name="phone"
+        placeholder="+91 9876543210"
+        className="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 outline-none focus:border-[#E31E24] focus:bg-white"
+      />
+    </div>
+
+    <div>
+      <label className="block text-sm font-semibold text-gray-700 mb-2">
+        Message
+      </label>
+
+      <textarea
+        name="message"
+        rows={5}
+        required
+        placeholder="Write your enquiry..."
+        className="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 outline-none resize-none focus:border-[#E31E24] focus:bg-white"
+      />
+    </div>
+
+    <button
+      type="submit"
+      className="w-full rounded-xl bg-[#E31E24] py-3 font-semibold text-white transition hover:bg-[#c51a20]"
+    >
+      Send Enquiry
+    </button>
+  </form>
+</motion.div>
+          <div>
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <input
+      type="hidden"
+      name="access_key"
+      value="03591616-34ea-4afb-acd4-05d2cb158cd4"
+    />
+
+    <input type="text" name="name" required />
+
+    <input type="email" name="email" required />
+
+    <textarea name="message" required />
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
         </div>
 
         {/* Follow Us */}
