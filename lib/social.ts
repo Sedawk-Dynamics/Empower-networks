@@ -31,7 +31,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     label: 'Instagram',
-    href: 'https://www.instagram.com/empowernetworks',
+    href: 'https://www.instagram.com/empower_networks',
     icon: InstagramIcon,
     color: '#E4405F',
   },
